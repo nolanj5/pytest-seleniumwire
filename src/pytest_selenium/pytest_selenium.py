@@ -10,7 +10,7 @@ import io
 import logging
 
 import pytest
-from selenium import webdriver
+from seleniumwire import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from tenacity import Retrying, stop_after_attempt, wait_exponential
@@ -28,7 +28,6 @@ SUPPORTED_DRIVERS = CaseInsensitiveDict(
         "Chrome": webdriver.Chrome,
         "Edge": webdriver.Edge,
         "Firefox": webdriver.Firefox,
-        "IE": webdriver.Ie,
         "Remote": webdriver.Remote,
         "Safari": webdriver.Safari,
         "SauceLabs": webdriver.Remote,
