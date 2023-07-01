@@ -164,6 +164,7 @@ def driver_kwargs(
             port=pytestconfig.getoption("selenium_port"),
             service_log_path=None,
             request=request,
+            seleniumwire_options={'mitm_http2': False},
             test=".".join(split_class_and_test_names(request.node.nodeid)),
         )
     )
