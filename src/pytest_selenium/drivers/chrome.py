@@ -9,10 +9,10 @@ def driver_kwargs(
     capabilities, driver_args, driver_log, driver_path, chrome_options, **kwargs
 ):
     kwargs = {
+        "desired_capabilities": capabilities,
         "service_log_path": driver_log,
         "options": chrome_options,
     }
-    kwargs["options"].set_capability('cloud:options', capabilities)
 
     if driver_args is not None:
         kwargs["service_args"] = driver_args
