@@ -10,10 +10,11 @@ def driver_kwargs(
 ):
     kwargs = {
         # "desired_capabilities": capabilities,
-        "service_log_path": driver_log,
+        # "service_log_path": driver_log,
         "options": chrome_options,
     }
 
+    capabilities.update({"service_log_path": driver_log})
     if driver_args is not None:
         kwargs["service_args"] = driver_args
     if driver_path is not None:
