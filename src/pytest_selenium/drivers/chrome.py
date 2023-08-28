@@ -9,7 +9,7 @@ def driver_kwargs(
     capabilities, driver_args, driver_log, driver_path, chrome_options, **kwargs
 ):
     kwargs = {
-        "desired_capabilities": capabilities,
+        # "desired_capabilities": capabilities,
         "service_log_path": driver_log,
         "options": chrome_options,
     }
@@ -18,6 +18,8 @@ def driver_kwargs(
         kwargs["service_args"] = driver_args
     if driver_path is not None:
         kwargs["executable_path"] = driver_path
+    for key, value in capabilities.items():
+        kwargs["options"].set_capability(key, value)
     return kwargs
 
 
